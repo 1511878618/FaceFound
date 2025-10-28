@@ -46,7 +46,13 @@ mamba env create -f PaperEnvironment.yml
 For Python packages
 - Python ≥ 3.10
 - R ≥ 4.1
+```
+mamba create -n FaceFound python=3.10 pandas numpy seaborn scipy statsmodels plotnine pingouin 
+mamba config --add channels r
+mamba install  r-essentials r-base r-relaimpo 
 
+# dcurves 
+```
 
 ## 🧩 Model Training and fine-tuning
 

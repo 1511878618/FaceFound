@@ -59,13 +59,13 @@ mamba install  r-essentials r-base r-relaimpo
 ### 1. Pretraining (Self-supervised)
 
 ```bash
-python train_pretext.py --config configs/pretext.yaml
+bash FaceFound/scripts/pretrain.sh
 ```
 
 ### 2. Fine-tuning on Biomarkers
 
 ```bash
-python train_biomarker.py --config configs/finetune.yaml
+bash FaceFound/scripts/finetune.sh
 ```
 
 

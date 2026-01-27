@@ -1,5 +1,3 @@
-
-
 # A facial foundation model for reproducible and scalable biomarker prediction
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
@@ -11,9 +9,8 @@
 The model adopts a **progressive general-to-clinical pretraining strategy**, transferring knowledge from large-scale general image datasets to clinical biomarker prediction tasks across **62 biomarkers spanning 8 physiological systems**.
 
 This repository provides:
-1. **The core implementation of FaceFound**
-2. **Pretrained weights**
-3. **Analysis pipline of this paper**
+1. **The pretraining codes of FaceFound**
+1. **Analysis pipline of this paper**
 
 
 ## 📄 Abstract
@@ -33,12 +30,7 @@ Trained through progressive self-supervised and clinical fine-tuning, FaceFound 
 ## ⚙️ Installation
 
 ```bash
-git clone https://github.com/<YourOrg>/FaceFound.git
-cd FaceFound
-# For pretraining and fine-tuning
-mamba env create -f PretrainingEnvironment.yml
-# For paper analysis
-mamba env create -f PaperEnvironment.yml
+git clone git@github.com:1511878618/FaceFound.git
 ```
 
 **Dependencies:**
@@ -47,11 +39,15 @@ For Python packages
 - Python ≥ 3.10
 - R ≥ 4.1
 ```
-mamba create -n FaceFound python=3.10 pandas numpy seaborn scipy statsmodels plotnine pingouin 
-mamba config --add channels r
-mamba install  r-essentials r-base r-relaimpo 
+conda create -n FaceFound python=3.10 pandas numpy seaborn scipy statsmodels plotnine pingouin 
+conda config --add channels r
+conda install  r-essentials r-base r-relaimpo 
+```
 
-# dcurves 
+For pretraining
+```bash
+conda create -n FaceFoundPretraining python=3.10
+pip install -r PretrainingRequirements.txt
 ```
 
 ## 🧩 Model Training and fine-tuning
@@ -69,16 +65,19 @@ bash FaceFound/scripts/finetune.sh
 ```
 
 
+## 📦Data Access
 
+To replicated our results from this repo, you need to request access to the data.
+ Please email  **[xutingfeng@big.ac.cn](mailto:xutingfeng@big.ac.cn)**
+ to request access:
+ 
+1. Provide your name, affiliation, intended use, and the specific files you need.
 
----
+1. Data will be shared only in compliance with applicable ethics approvals and data-use agreements (e.g., de-identified outputs where appropriate).
 
-## 📊 Reproducing Results
-**First**, download the [Predictions and Labels](xxxx)
+## 📊 Analysis 
 
-> For `config.py`, it records the necessary and basic variables for the analysis
-
-**Second**, Run the following scripts to reproduce the results in the paper:
+Run the following scripts to reproduce the results in the paper:
 
 - `01-Table.ipynb` Generate Table 1
 - `02-ModelPerformance.ipynb` Evaluate model performance
@@ -91,18 +90,8 @@ bash FaceFound/scripts/finetune.sh
 
 ## 📚 Citation
 
-If you use this repository, please cite our work:
-
-<!-- ```
-@article{FaceFound2025,
-  title   = {FaceFound: A Facial Foundation Model for Multi-System Biomarker Prediction},
-  author  = {Your Name et al.},
-  journal = {Nature Medicine},
-  year    = {2025},
-  doi     = {10.1038/s41591-XXXX-XXXXX}
-}
-``` -->
-
+If you use this repository, please cite our work: 
+Minxian Wang, Tingfeng Xu, Huixuan Xu et al. A facial foundation model for multi-system biomarker and disease risk prediction with real-world mobile deployment, 20 January 2026, PREPRINT (Version 1) available at Research Square [https://doi.org/10.21203/rs.3.rs-8110055/v1]
 
 
 ## 🧾 License

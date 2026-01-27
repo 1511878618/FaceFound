@@ -1,0 +1,15 @@
+early-stopping-pytorch
+Jinja2
+lightning-utilities
+networkx
+numpy
+pandas
+pillow
+six
+tensorboard
+timm
+torch
+torchaudio
+torchmetrics
+torchvision
+tqdm
